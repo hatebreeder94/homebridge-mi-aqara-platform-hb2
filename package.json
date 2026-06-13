@@ -1,21 +1,29 @@
 {
-  "name": "homebridge-mi-aqara-platform",
-  "version": "1.0.2",
+  "name": "homebridge-mi-aqara-platform-hb2",
+  "version": "1.0.4",
   "description": "XiaoMi Aqara plugins for HomeBridge(https://github.com/nfarina/homebridge).",
   "license": "ISC",
   "keywords": [
     "homebridge-plugin"
   ],
-  "author": "theo-69",
+  "author": "hatebreeder94",
   "repository": {
     "type": "git",
-    "url": "https://github.com/theo-69/homebridge-mi-aqara-platform"
+    "url": "git+https://github.com/hatebreeder94/homebridge-mi-aqara-platform-hb2.git"
   },
   "bugs": {
-    "url": "https://github.com/theo-69/homebridge-mi-aqara-platform/issues"
+    "url": "https://github.com/hatebreeder94/homebridge-mi-aqara-platform-hb2/issues"
   },
   "engines": {
     "node": ">=0.12.0",
     "homebridge": ">=0.4.1"
+  },
+  "homepage": "https://github.com/hatebreeder94/homebridge-mi-aqara-platform-hb2#readme",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

@@ -1,3 +1,57 @@
+# homebridge-mi-aqara-platform-hb2
+[![npm version](https://badge.fury.io/js/homebridge-mi-aqara-platform-hb2.svg)](https://badge.fury.io/js/homebridge-mi-aqara-platform-hb2)
+
+This is a fork of https://github.com/theo-69/homebridge-mi-aqara-platform.git
+
+Added support for newest Homebridge 2.x and tested on my personal setup:
+
+|Device Name|Protocol Model Value|
+|:-|:-|
+|Mi Control Hub|lumi.gateway.v3|
+|Motion Sensor|lumi.sensor_motion.v2|
+|Mi Temperature and Humidity Sensor|lumi.sensor_ht.v1|
+|Mi Programmable Button|lumi.sensor_switch.v2|
+
+## Updated configuration guide
+
+**Old way of getting LAN Password is no longer working**
+
+1. Set up your hub in Xiaomi Home application.
+2. Follow usage guide in [Xiaomi-cloud-tokens-extractor](https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor) repo.
+3. In the token extractor output, look for the necessary device and take note of `MAC`, `IP` and `TOKEN` values.
+4. Install latest version of [Python](https://www.python.org/downloads/).
+5. Open powershell/terminal/bash and run command: `pip install python-miio`.
+6. After successful install, run: `miiocli gateway --ip <YOUR_DEVICE_IP> --token <YOUR_DEVICE_TOKEN> info` to test it out.
+> There may be an error related to "click" package version, 
+> to fix run:  
+> `py -3.14 -m pip install --force-reinstall "click==8.1.8"`
+
+7. Next, in order to get the LAN password run: `miiocli gateway --ip <YOUR_DEVICE_IP> --token <YOUR_DEVICE_TOKEN> get_developer_key`
+8. Last but not least, to enable LAN mode run: `miiocli gateway --ip <YOUR_DEVICE_IP> --token <YOUR_DEVICE_TOKEN> set_prop used_for_public 1`
+
+You should now have all the access and data necessary for configuring the plugin in Homebridge.  
+`MAC`: MAC address of the control hub. Write it down without colons and in lower case. example: `5C:E5:0C:B2:75:CC -> 5ce50cb275cc`  
+`LAN_PASSWORD`: the output of point 7 above, should be a 16 character string  
+
+Example config:
+```
+{
+    "platforms": [{
+        "platform": "MiAqaraPlatform",
+        "gateways": {
+            "<MAC>": "<LAN_PASSWORD>"
+        },
+        "bindAddress": "<IP_ADDRESS_OF_HOMEBRIDGE_SERVER>"
+    }]
+}
+```
+
+All should be set now!  
+
+---
+
+# Original Readme 
+
 ### NEW Version
 
 * WallButton new Name for both and double is now just one Button (left click > one click, right click > two click, both click > long click)
@@ -17,7 +71,7 @@ sudo npm link
 ```
 
 # homebridge-mi-aqara-platform
-[![npm version](https://badge.fury.io/js/homebridge-mi-platform.svg)](https://badge.fury.io/js/homebridge-mi-platform)
+
 
 homebridge plugin for XiaoMi Aqara plugin.   
 
