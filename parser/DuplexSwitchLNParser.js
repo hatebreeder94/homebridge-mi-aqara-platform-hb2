@@ -23,9 +23,9 @@ class DuplexSwitchLNSwitchBaseParser extends AccessoryParser {
     getAccessoryCategory(deviceSid) {
         var serviceType = this.platform.ConfigUtil.getAccessoryServiceType(deviceSid, this.accessoryType);
         if(serviceType == 'Lightbulb') {
-            return this.Accessory.Categories.LIGHTBULB;
+            return this.Accessory.LIGHTBULB;
         } else {
-            return this.Accessory.Categories.SWITCH;
+            return this.Accessory.SWITCH;
         }
     }
     

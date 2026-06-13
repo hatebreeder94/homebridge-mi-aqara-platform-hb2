@@ -21,7 +21,7 @@ class MotionSensor2MotionSensorParser extends AccessoryParser {
     }
     
     getAccessoryCategory(deviceSid) {
-        return this.Accessory.Categories.SENSOR;
+        return this.Accessory.SENSOR;
     }
     
     getAccessoryInformation(deviceSid) {
@@ -97,7 +97,7 @@ class MotionSensor2LightSensorParser extends AccessoryParser {
     }
     
     getAccessoryCategory(deviceSid) {
-        return this.Accessory.Categories.SENSOR;
+        return this.Accessory.SENSOR;
     }
     
     getAccessoryInformation(deviceSid) {

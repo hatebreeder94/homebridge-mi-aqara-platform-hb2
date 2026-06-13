@@ -22,7 +22,7 @@ class Button2StatelessProgrammableSwitchParser extends AccessoryParser {
     }
     
     getAccessoryCategory(deviceSid) {
-        return this.Accessory.Categories.PROGRAMMABLE_SWITCH;
+        return this.Accessory.PROGRAMMABLE_SWITCH;
     }
     
     getAccessoryInformation(deviceSid) {

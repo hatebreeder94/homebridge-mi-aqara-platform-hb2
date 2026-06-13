@@ -20,7 +20,7 @@ class SmokeDetectorSmokeSensorParser extends AccessoryParser {
     }
     
     getAccessoryCategory(deviceSid) {
-        return this.Accessory.Categories.SENSOR;
+        return this.Accessory.SENSOR;
     }
     
     getAccessoryInformation(deviceSid) {

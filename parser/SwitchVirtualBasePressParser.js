@@ -6,7 +6,7 @@ class SwitchVirtualBasePressParser extends AccessoryParser {
     }
     
     getAccessoryCategory(deviceSid) {
-        return this.Accessory.Categories.SWITCH;
+        return this.Accessory.SWITCH;
     }
     
     getServices(jsonObj, accessoryName) {

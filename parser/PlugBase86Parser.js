@@ -20,7 +20,7 @@ class PlugBase86OutletParser extends AccessoryParser {
     }
     
     getAccessoryCategory(deviceSid) {
-        return this.Accessory.Categories.OUTLET;
+        return this.Accessory.OUTLET;
     }
     
     getAccessoryInformation(deviceSid) {
